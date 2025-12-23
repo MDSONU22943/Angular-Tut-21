@@ -1,2 +1,11 @@
-<h1>First File</h1>
-<h2>{{name}}</h2>
+<div>
+    <h2>Counter App</h2>
+    <div>
+        {{counter()}}
+    </div>
+    <div>
+        <button (click)="decrement()">-</button>
+        <button (click)="reset()">reset</button>
+        <button (click)="increment()">+</button>
+    </div>
+</div>
