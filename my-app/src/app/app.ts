@@ -7,21 +7,13 @@ import { Component, signal, WritableSignal } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-  counter:WritableSignal<number> =signal<number>(0)
+  name:WritableSignal<string>= signal('')
 
-  increment() {
-    this.counter.update((val) => val + 1)
+  resetValue(){
+    this.name.set("Anil Sidhu")
   }
-
-  decrement() {
-    if (this.counter() > 0) {
-
-      this.counter.update((val) => val - 1)
-    }
-  }
-
-  reset() {
-    this.counter.set(0)
+  setValue(val:string){
+    this.name.set(val)
   }
 
 
