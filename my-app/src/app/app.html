@@ -1,3 +1,27 @@
-<p>Value: {{name()}}</p>
-<input type="text" [value]="name()" (input)="setValue($event.target.value)">
-<button (click)="resetValue()">Reset Value</button>
+<h1>Control Flow Statement</h1>
+<div>
+    @if(isLogin()){
+        <span>Welcome, User</span>
+        <button (click)="handleLogin(false)">Logout</button>
+    }
+    @else {
+        <span>Please, Login</span>
+        <button (click)="handleLogin(true)">Login</button>
+    }
+</div>
+<hr>
+
+@if(show()){
+    <button (click)="show.set(false)">Hide</button>
+}
+@else {
+    <button (click)="show.set(true)">Show</button>
+}
+<hr>
+<h1>check status</h1>
+@if(status()=="notstarted"){
+    <span>No Status</span>
+}
+@else if(status()=="progress"){
+    <span>In Progress</span>
+}

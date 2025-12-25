@@ -7,13 +7,12 @@ import { Component, signal, WritableSignal } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-  name:WritableSignal<string>= signal('')
+  isLogin = signal(false)
+  show=signal(true)
+  status=signal("notStarted")
 
-  resetValue(){
-    this.name.set("Anil Sidhu")
-  }
-  setValue(val:string){
-    this.name.set(val)
+  handleLogin(status:boolean){
+    this.isLogin.set(status)
   }
 
 
