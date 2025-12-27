@@ -1,27 +1,17 @@
-<h1>Control Flow Statement</h1>
-<div>
-    @if(isLogin()){
-        <span>Welcome, User</span>
-        <button (click)="handleLogin(false)">Logout</button>
-    }
-    @else {
-        <span>Please, Login</span>
-        <button (click)="handleLogin(true)">Login</button>
-    }
-</div>
-<hr>
+<h1>&#64;for | Control Flow Statement</h1>
 
-@if(show()){
-    <button (click)="show.set(false)">Hide</button>
-}
-@else {
-    <button (click)="show.set(true)">Show</button>
-}
-<hr>
-<h1>check status</h1>
-@if(status()=="notstarted"){
-    <span>No Status</span>
-}
-@else if(status()=="progress"){
-    <span>In Progress</span>
-}
+<div>
+    @for(user of users(); track user){
+    <li>{{user}}</li>
+    }
+    <hr>
+
+    <ul>
+        @for(user of usersDetail(); track user.id){
+        <li [style.backgroundColor]="$odd?'#ccc':'#ddd'"><span>{{user.id + " " +user.name + " " + user.surname}}
+             @if($first){<span style="color: red;">Admin</span>}</span>
+            @if($last){<span style="color: orange;">Guest</span>}
+            </li>
+        }
+    </ul>
+</div>
