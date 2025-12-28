@@ -1,17 +1,10 @@
-<h1>&#64;for | Control Flow Statement</h1>
+<!-- <h1>Two way data binding</h1>
 
-<div>
-    @for(user of users(); track user){
-    <li>{{user}}</li>
-    }
-    <hr>
+<h1>{{name()}}</h1>
+<input type="text" [value]="name()" (input)="name.set($event.target.value)">
 
-    <ul>
-        @for(user of usersDetail(); track user.id){
-        <li [style.backgroundColor]="$odd?'#ccc':'#ddd'"><span>{{user.id + " " +user.name + " " + user.surname}}
-             @if($first){<span style="color: red;">Admin</span>}</span>
-            @if($last){<span style="color: orange;">Guest</span>}
-            </li>
-        }
-    </ul>
-</div>
+<h1>{{age}}</h1>
+<input type="text" [value]="age" [(ngModel)]="age"> -->
+
+<h1>{{userData().name}}</h1>
+<input type="text" [value]="userData().name" (input)="updateUserData('name', $event.target.value)">
