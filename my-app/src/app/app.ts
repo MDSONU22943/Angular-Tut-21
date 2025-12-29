@@ -1,30 +1,28 @@
 import { Component, signal, WritableSignal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  tasks = signal([
-    { id: 0, title: "Team Lunch", completed: false }
-  ])
-  title = signal('')
+  userName=signal("Anil Sidhu")
+  userData = signal({college:"iet alwar", email:"anil@test"})
 
-  addTask() {
-    // console.log(this.title())
-    if (this.title()) {
-      this.tasks.update((item) => (
-        [...item, { id: this.tasks().length, title: this.title(), completed: false }]
-      ))
-      this.title.set('')
-    }
+  get uName(){
+    return this.userName();
   }
 
-  deleteTask(id: number) {
-    this.tasks.update((tasks) => (
-      tasks.filter((task) => task.id != id)
-    ))
+  set uName(val:string){
+    this.userName.set(val)
+  }
+
+  get userCollege(){
+    return this.userData().college
+  }
+  set userCollege(val){
+     this.userData.update((item)=>({...item, college:val}) )
   }
 }
