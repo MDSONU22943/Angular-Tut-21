@@ -1,10 +1,13 @@
-<!-- <h1>Two way data binding</h1>
+<h1>To-Do List</h1>
+<input type="text" placeholder="Enter Task" (input)="title.set($event.target.value)" [value]="title()">
+<button (click)="addTask()">Add Task</button>
+<ul>
+@for(task of tasks(); track task.id){
+    <li class="task-list"><span>{{$index+1}}</span><span>{{task.title}}</span>
+    <span><button (click)="deleteTask(task.id)">delete</button></span></li>
+}
 
-<h1>{{name()}}</h1>
-<input type="text" [value]="name()" (input)="name.set($event.target.value)">
-
-<h1>{{age}}</h1>
-<input type="text" [value]="age" [(ngModel)]="age"> -->
-
-<h1>{{userData().name}}</h1>
-<input type="text" [value]="userData().name" (input)="updateUserData('name', $event.target.value)">
+@empty{
+    <span>No Task Found.</span>
+}
+</ul>
