@@ -1,28 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component, signal, WritableSignal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule],
+  imports: [CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+
 export class App {
-  userName=signal("Anil Sidhu")
-  userData = signal({college:"iet alwar", email:"anil@test"})
+  isLogin = signal(true)
 
-  get uName(){
-    return this.userName();
-  }
+  users = signal(["anil", "sam", "peter", "bruce"])
+  pColor="red"
 
-  set uName(val:string){
-    this.userName.set(val)
-  }
-
-  get userCollege(){
-    return this.userData().college
-  }
-  set userCollege(val){
-     this.userData.update((item)=>({...item, college:val}) )
-  }
 }

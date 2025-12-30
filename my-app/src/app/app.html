@@ -1,8 +1,11 @@
-<h1>{{uName}}</h1>
+<h1>Directives | Structural, Attribute & Component</h1>
 
-<input type="text" [(ngModel)]="uName">
+<h1 *ngIf="isLogin()">Welcome User</h1>
 
-<hr>
+<div>
+    <ul *ngFor="let user of users()">
+        <li>{{user}}</li>
+    </ul>
+</div>
 
-<h2>{{userCollege}}</h2>
-<input type="text" [(ngModel)]="userCollege">
+<p [ngStyle]="{color:pColor}">Hello Visitors</p>
