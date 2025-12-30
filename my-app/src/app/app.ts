@@ -9,9 +9,15 @@ import { Component, signal, WritableSignal } from '@angular/core';
 })
 
 export class App {
-  isLogin = signal(true)
 
-  users = signal(["anil", "sam", "peter", "bruce"])
-  pColor="red"
+  students = ["Anil", "sam", "peter", "vinay", "bruce"]
 
+  studentsData = [
+    {name:"Anil", age:29, email:"anil@test.com"},
+    {name:"vinay", age:30, email:"anil2@test.com"},
+    {name:"bruce", age:31, email:"anil3@test.com"},
+    {name:"peter", age:32, email:"anil4@test.com"},
+  ]
+
+  show=true
 }
