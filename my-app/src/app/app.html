@@ -1,3 +1,8 @@
-<app-display-count></app-display-count>
-<hr>
-<app-control-count></app-control-count>
+<h1>{{title | uppercase}}</h1>
+<h1>{{title | titlecase}}</h1>
+<h1>{{name() | titlecase}}</h1>
+<input type="text" (input)="name.set($event.target.value)">
+
+<h3>I bought a {{mobile | titlecase}} mobile on {{date}} in {{amount | currency:'INR'}}</h3>
+
+<h2>{{user() | json}}</h2>
