@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Child } from './child';
+import { ControlCount } from './control-count';
 
-describe('Child', () => {
-  let component: Child;
-  let fixture: ComponentFixture<Child>;
+describe('ControlCount', () => {
+  let component: ControlCount;
+  let fixture: ComponentFixture<ControlCount>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Child]
+      imports: [ControlCount]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Child);
+    fixture = TestBed.createComponent(ControlCount);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
