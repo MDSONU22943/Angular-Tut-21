@@ -1,21 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal, WritableSignal } from '@angular/core';
+import { TrimTextPipe } from './custom-pipe/trim-text-pipe';
 
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule],
+  imports: [CommonModule, TrimTextPipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
 export class App {
-  title="code step by step"
-  name = signal('')
-
-  amount = 10000
-  date ="24-8-2025"
-  mobile="samsung"
-
-  user = signal({name:'anil', age:29, email:"code@test.com"})
+  title=signal("code step by step")
+  
 }
