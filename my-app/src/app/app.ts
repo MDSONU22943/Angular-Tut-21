@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal, WritableSignal } from '@angular/core';
-import { TrimTextPipe } from './custom-pipe/trim-text-pipe';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, TrimTextPipe],
+  imports: [CommonModule, RouterOutlet, RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
 export class App {
-  title=signal("code step by step")
+  
   
 }
