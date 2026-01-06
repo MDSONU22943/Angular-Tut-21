@@ -9,7 +9,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class Home {
   constructor(public route:Router){}
-  userData = signal({name:"anil",age:29,id:1})
+  userData = signal({name:"anil",age:35,id:1})
 
   goToProfile(){
     this.route.navigate(['profile'], {
