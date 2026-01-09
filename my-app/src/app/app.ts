@@ -1,16 +1,25 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal, WritableSignal } from '@angular/core';
-import { RouterOutlet, RouterLinkWithHref } from '@angular/router'
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { UserDetails } from './user-details/user-details';
 
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, RouterLinkWithHref],
+  imports: [CommonModule,UserDetails],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
 export class App {
-  
+  @ViewChild("container", {read:ViewContainerRef})
+  container:ViewContainerRef | undefined
+
+  async loadeUserDetails(){
+    this.container?.clear()
+      console.log("loaded user details");
+      const {UserDetails} = await import('./user-details/user-details')
+      this.container?.createComponent(UserDetails)
+      
+    }
   
 }
