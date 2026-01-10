@@ -1,3 +1,12 @@
-<button (click)="loadeUserDetails()">Load User Details</button>
-
-<ng-container #container></ng-container>
+<h1>Reactive Form</h1>
+<ul>
+    <li>Email: {{email.value}}</li>
+    <li>Password: {{password.value}}</li>
+</ul>
+<input type="text" placeholder="Enter Email" [formControl]="email">
+<br><br>
+<input type="password" placeholder="Enter Password"
+[formControl]="password">
+<br><br>
+<button (click)="login()">Login</button>
+<button (click)="reset()">Reset</button>

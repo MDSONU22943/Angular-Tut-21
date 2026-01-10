@@ -1,25 +1,30 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
-import { UserDetails } from './user-details/user-details';
+import { Component} from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule,UserDetails],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
 export class App {
-  @ViewChild("container", {read:ViewContainerRef})
-  container:ViewContainerRef | undefined
+  email=new FormControl("")
+  password = new FormControl("")
 
-  async loadeUserDetails(){
-    this.container?.clear()
-      console.log("loaded user details");
-      const {UserDetails} = await import('./user-details/user-details')
-      this.container?.createComponent(UserDetails)
-      
-    }
-  
+  login(){
+    console.log("login");
+    console.log(this.email.value, this.password.value);
+    
+    
+  }
+
+  reset(){
+    this.email.setValue("")
+    this.password.setValue("")
+  }
+
+
 }
