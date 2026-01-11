@@ -1,12 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-a{
-    color:orange ;
-    padding: 8px;
-    
-}
-
-
-
-.child-nav a{
-    color: brown;
+.error{
+    color:red;
+    padding-left: 10px;
 }
