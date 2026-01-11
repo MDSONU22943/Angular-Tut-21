@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
@@ -11,20 +11,21 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 
 export class App {
-  email=new FormControl("")
-  password = new FormControl("")
+  loginForm = new FormGroup({
+    name:new FormControl(''),
+    email:new FormControl(''),
+    password:new FormControl('')
+  })
 
-  login(){
-    console.log("login");
-    console.log(this.email.value, this.password.value);
-    
+  handleProfile(){
+    console.log(this.loginForm.value);
     
   }
-
   reset(){
-    this.email.setValue("")
-    this.password.setValue("")
+    this.loginForm.setValue({
+      name:'',
+      password:'',
+      email:''
+    })
   }
-
-
 }
