@@ -27,6 +27,6 @@ method="post">
     <span class="error">This Email Field is not Valid.</span>
    }
    <br><br>
-   <button>Submit</button>
+   <button [disabled]="loginForm.invalid">Submit</button>
    <button (click)="reset()">Reset</button>
 </form>
