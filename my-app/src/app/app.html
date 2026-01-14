@@ -1,23 +1,8 @@
-<h1>Template Driven Form</h1>
+<h1>Products</h1>
 
+<button (click)="loadData()">Load Data</button>
 <ul>
-    <li>Name:{{userDetails?.userName}}</li>
+    @for(product of productData(); track product.id){
+        <li>{{product.name}}, {{product.price}}</li>
+    }
 </ul>
-
-<form action="" #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
-    <input type="text" name="userName" placeholder="Enter User Name" ngModel>
-    <br><br>
-    <input type="text" name="password" placeholder="Enter password" ngModel>
-    <br><br>
-    <select name="gender" id="" ngModel>
-        <option value="">Select Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-    </select>
-    <br><br>
-    <input type="range" name="range" id="" ngModel>
-    <br><br>
-    <textarea name="userBio" id="" ngModel></textarea>
-    <br><br>
-    <button>Add User</button>
-</form>

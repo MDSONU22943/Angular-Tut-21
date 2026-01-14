@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal, WritableSignal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { ProductService } from './services/product-service';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,19 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 
 export class App {
-  userDetails:any=undefined
+  productData:any=signal("")
+  constructor(private productService: ProductService){}
+  // ngOnInit(){
+  //   let data = this.productService.getProducts()
+  //   console.log(data);
+  //   this.productData.set(data)
+    
+  // }
 
-  addUser(data:NgForm){
+  loadData(){
+    let data = this.productService.getProducts()
     console.log(data);
-    this.userDetails=data
+    this.productData.set(data)
   }
 }
 
