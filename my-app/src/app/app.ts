@@ -1,29 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal, WritableSignal } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
-import { ProductService } from './services/product-service';
+import { Component, signal } from '@angular/core';
+import { Products } from './services/products';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
 export class App {
-  productData:any=signal("")
-  constructor(private productService: ProductService){}
-  // ngOnInit(){
-  //   let data = this.productService.getProducts()
-  //   console.log(data);
-  //   this.productData.set(data)
-    
-  // }
 
-  loadData(){
-    let data = this.productService.getProducts()
-    console.log(data);
-    this.productData.set(data)
+  productData:any = signal("")
+  constructor(private productService:Products){
+
+  }
+  ngOnInit(){
+    this.productService.getProducts().subscribe((data)=>{
+      console.log(data.products);
+      this.productData.set(data.products)
+      
+    })
   }
 }
 
