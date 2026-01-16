@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core';
+import { productsAPIResponse } from './productDataType';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,6 @@ export class Products {
   }
 
   getProducts(){
-    return this.http.get<any>(this.apiURL)
+    return this.http.get<productsAPIResponse>(this.apiURL)
   }
 }

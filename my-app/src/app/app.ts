@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { Products } from './services/products';
+import { Product } from './services/productDataType'
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { Products } from './services/products';
 
 export class App {
 
-  productData:any = signal("")
+  productData:any = signal<Product[] | undefined>(undefined)
   constructor(private productService:Products){
 
   }
