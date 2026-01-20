@@ -1,0 +1,12 @@
+<h1>User List</h1>
+
+<ul>
+    @for(user of usersData(); track user.id){
+        <ul>
+            <li>Name: {{user.name | titlecase}}</li>
+            <li>Age: {{user.age}}</li>
+            <li>Email: {{user.email}}</li>
+            <hr>
+        </ul>
+    }
+</ul>

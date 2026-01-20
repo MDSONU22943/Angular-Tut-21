@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
+import { UserList } from './components/user-list/user-list';
+
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, MatButtonModule,MatDividerModule, MatIconModule],
+  imports: [CommonModule, UserList],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
