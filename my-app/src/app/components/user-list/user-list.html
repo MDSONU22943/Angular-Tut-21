@@ -6,6 +6,7 @@
             <li>Name: {{user.name | titlecase}}</li>
             <li>Age: {{user.age}}</li>
             <li>Email: {{user.email}}</li>
+            <li><button (click)="deleteUser(user.id)">Delete</button></li>
             <hr>
         </ul>
     }

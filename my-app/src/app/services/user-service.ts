@@ -16,4 +16,8 @@ export class UserService {
   saveUser(data: users) {
     return this.http.post<users>(this.url,data)
   }
+
+  deleteUser(id:number){
+    return this.http.delete(`${this.url}/${id}`)
+  }
 }

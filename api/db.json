@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "anil sidhu",
-      "age": 29,
-      "email": "anil@test.com"
-    },
-    {
       "id": "2",
       "name": "rahul sharma",
       "age": 25,
@@ -71,12 +65,6 @@
       "name": "test",
       "age": 35,
       "email": "test@test.com"
-    },
-    {
-      "id": "33b4",
-      "name": "test20",
-      "age": 32,
-      "email": "test20@test20.com"
     }
   ]
 }
