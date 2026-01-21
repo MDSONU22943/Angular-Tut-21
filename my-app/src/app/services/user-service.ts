@@ -6,10 +6,14 @@ import { users } from './user-data-type';
   providedIn: 'root',
 })
 export class UserService {
-  url="http://localhost:3000/users"
-  constructor(private http: HttpClient){}
+  url = "http://localhost:3000/users"
+  constructor(private http: HttpClient) { }
 
-  getUsers(){
+  getUsers() {
     return this.http.get<users[]>(this.url)
+  }
+
+  saveUser(data: users) {
+    return this.http.post<users>(this.url,data)
   }
 }

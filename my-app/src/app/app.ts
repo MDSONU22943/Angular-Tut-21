@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { UserList } from './components/user-list/user-list';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, UserList],
+  imports: [CommonModule,RouterLink,RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
