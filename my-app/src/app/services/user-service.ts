@@ -24,4 +24,8 @@ export class UserService {
   getUser(id:number){
     return this.http.get<users>(`${this.url}/${id}`)
   }
+
+  editUser(data:users, id:string){
+    return this.http.put<users>(`${this.url}/${id}`, data)
+  }
 }
