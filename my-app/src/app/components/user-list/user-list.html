@@ -7,6 +7,7 @@
             <li>Age: {{user.age}}</li>
             <li>Email: {{user.email}}</li>
             <li><button (click)="deleteUser(user.id)">Delete</button></li>
+            <li (click)="editUser(user.id)"><button>Edit</button></li>
             <hr>
         </ul>
     }

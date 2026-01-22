@@ -20,4 +20,8 @@ export class UserService {
   deleteUser(id:number){
     return this.http.delete(`${this.url}/${id}`)
   }
+
+  getUser(id:number){
+    return this.http.get<users>(`${this.url}/${id}`)
+  }
 }

@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { UserService } from '../../services/user-service';
 import { users } from '../../services/user-data-type';
 import { TitleCasePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -11,7 +12,7 @@ import { TitleCasePipe } from '@angular/common';
 })
 export class UserList {
   usersData = signal<users[] | undefined>(undefined)
-  constructor(private userService:UserService){}
+  constructor(private userService:UserService, private router:Router){}
   ngOnInit(){
       this.getUser()
   }
@@ -31,6 +32,12 @@ export class UserList {
       this.getUser()
       })
     }
+    
+  }
+
+  editUser(id:number | undefined){
+    console.log(id);
+    this.router.navigate([`edit/${id}`])
     
   }
 }

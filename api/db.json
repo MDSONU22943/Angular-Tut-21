@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "id": "2",
-      "name": "rahul sharma",
-      "age": 25,
-      "email": "rahul@test.com"
-    },
-    {
       "id": "3",
       "name": "priya singh",
       "age": 27,
@@ -59,12 +53,6 @@
       "name": "monika joshi",
       "age": 22,
       "email": "monika@test.com"
-    },
-    {
-      "id": "7cf3",
-      "name": "test",
-      "age": 35,
-      "email": "test@test.com"
     }
   ]
 }
